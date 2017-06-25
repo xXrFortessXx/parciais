@@ -7,11 +7,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import javax.enterprise.context.SessionScoped;
@@ -522,7 +520,7 @@ public class SistemaController {
 			listTimes.add(timeObject);
 		}
 		
-		recuperaParcial(listTimes);
+//		recuperaParcial(listTimes);
 		//Setamos a lista de times no bean detalhes da liga
 		ligaSelecionada.setTimes(listTimes);
 		
@@ -577,13 +575,6 @@ public class SistemaController {
 			}
 		}
 		return new String(os.toByteArray());
-	}
-	private void recuperaParcial(ArrayList<TimesBean> listTimes) throws IOException {
-		
-		ArrayList<JogadorTD> jogadores = recuperaParciaisJogadoresRodadaAtu();
-		
-		for(int i=0; i< listTimes.size(); i++){
-		}
 	}
 
 	private ArrayList<JogadorTD> recuperaParciaisJogadoresRodadaAtu() throws IOException {
